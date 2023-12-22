@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace API_Pokédex.View
 {
     /// <summary>
-    /// Logique d'interaction pour Rechercher.xaml
+    /// Logique d'interaction pour infospok.xaml
     /// </summary>
-    public partial class Rechercher : UserControl
+    public partial class infospok : UserControl
     {
-        public Rechercher()
+        public infospok()
         {
             InitializeComponent();
         }

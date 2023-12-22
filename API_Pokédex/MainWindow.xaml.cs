@@ -28,8 +28,8 @@ namespace API_Pokédex
         private void BTN_Rechercher_Click(object sender, RoutedEventArgs e)
         {
             Grid_Affichage.Children.Clear();
-            Rechercher my_Rechercher = new Rechercher();
-            Grid_Affichage.Children.Add(my_Rechercher);
+            infospok my_infospok = new infospok();
+            Grid_Affichage.Children.Add(my_infospok);
         }
     }
 }
