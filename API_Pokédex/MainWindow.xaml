@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:API_Pokédex"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="650" Width="900">
+    <Grid> <!-- coucou -->
         <Grid.RowDefinitions>
             <RowDefinition Height="0"/>
             <RowDefinition Height="*"/>
