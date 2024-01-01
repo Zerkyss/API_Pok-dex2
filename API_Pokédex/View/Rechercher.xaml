@@ -6,21 +6,291 @@
              xmlns:local="clr-namespace:API_Pokédex.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="Black">
+
+    <!--Infos général du pokémon + Titre-->
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Image Source="/Images/Pokédex Ouvert + Titre.png" Grid.RowSpan="2" />
 
+        <!--Titre-->
         <Grid Grid.Row="0" Name="Grid_Titre">
-            
+
         </Grid>
-        <Grid Grid.Row="1" Name="Grid_Info_Pokémon">
+
+        <!-- Grid Types + recherche + Photo pokémon-->
+        <Grid Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <!--Grid Recherche d'un nouveau pokémon  -->
+            <Grid Grid.Row="0">
+
+            </Grid>
+
+            <!--Grid Type du pokémon  -->
+            <Grid Grid.Row="1">
+
+            </Grid>
+
+            <!--Grid Photo du pokémon  -->
+            <Grid Grid.Row="2">
+
+            </Grid>
+        </Grid>
+        <!--Info géneéral du pokémon-->
+        <Grid Grid.Row="1" Name="Grid_Info_Général_Pokémon" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
+            <!--Statistique du pokémon-->
+            <Grid Grid.Row="1" Grid.Column="1" Name="State_Pokémon" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid/>
+                <!--Info du pokémon-->
+                <Grid Grid.Row="0" Name="Nom_du_pokémon_PV_Type">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Nom-->
+                    <Grid Grid.Row="0" Name="Nom_Pokémon">
+
+                    </Grid>
+
+
+                    <!--PV du pokémon-->
+                    <Grid Grid.Row="1" Name="Pv_Pokémon">
+
+                    </Grid>
+                </Grid>
+
+                <!--Nom évolution-->
+                <Grid Grid.Row="1" Name="Nom_de_évolution_PV">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2.5*"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <!---->
+                    <Grid Grid.Row="0" Name="Nom_évolution">
+
+                    </Grid>
+
+                    <!---->
+                    <Grid Grid.Row="1" Name="Pv_évolution">
+
+
+                    </Grid>
+
+                    <!---->
+                    <Grid Grid.Row="1" Name="Nom_de_l_évolution_pv_Type">
+
+                    </Grid>
+
+                </Grid>
+
+                <!--Info sur le pokémon-->
+                <Grid Grid.Row="2" Name="Infos_du_pokémon">
+
+                </Grid>
+
+                <!--Point d'attaque-->
+                <Grid Grid.Row="3" Name="Pa">
+
+                </Grid>
+
+                <!--Point de défense-->
+                <Grid Grid.Row="4" Name="défense">
+
+                </Grid>
+
+                <!--Point de vitesse-->
+                <Grid Grid.Row="5" Name="vitesse">
+
+                </Grid>
+
+                <!--Sa taille-->
+                <Grid Grid.Row="6" Name="taille">
+
+                </Grid>
+
+                <!--Son poid-->
+                <Grid Grid.Row="7" Name="Poid">
+
+                </Grid>
+
+                <!--Id + ses resistancce + ses faiblesse-->
+                <Grid Grid.Row="8" Name="ID_resistance_faiblesse">
+
+                </Grid>
+
+            </Grid>
+
+            <!--Visuel du pokémon + son types + Rechercher un autre pokémon-->
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+
+                <!--Chercher un autre pokémon-->
+                <Grid Grid.Row="0" Name="Chercher" >
+
+                </Grid>
+
+                <!--Le Types de Pokémon-->
+                <Grid Grid.Row="1" Name="Types" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="0" Grid.Column="0" Name="Acier">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="1" Grid.Column="0" Name="Dragon">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="2" Grid.Column="0" Name="Éléctrique">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="3" Grid.Column="0" Name="Feu">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="0" Grid.Column="1" Name="Insecte">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="1" Grid.Column="1" Name="Plante">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="2" Grid.Column="1" Name="Psy">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="3" Grid.Column="1" Name="Sol">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="0" Grid.Column="2" Name="Ténèbres">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="1" Grid.Column="2" Name="Combat">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="2" Grid.Column="2" Name="Eau">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="3" Grid.Column="2" Name="Fée">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="0" Grid.Column="3" Name="Glace">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="1" Grid.Column="3" Name="Normal">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="2" Grid.Column="3" Name="Poison">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="3" Grid.Column="3" Name="Roche">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="0" Grid.Column="4" Name="Spectre">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="1" Grid.Column="4" Name="Vol">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="2" Grid.Column="4" Name="Inconnu">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="3" Grid.Column="4" Name="Obscur">
+
+                    </Grid>
+
+
+                    <Grid Grid.Row="0" Grid.Column="5" Name="Bird">
+
+                    </Grid>
+
+                </Grid>
+
+
+
+                <!--Photo du pokémon-->
+                <Grid Grid.Row="2" Name="Images_Pokémon" >
+
+                </Grid>
+
+            </Grid>
         </Grid>
 
     </Grid>
+
 </UserControl>
