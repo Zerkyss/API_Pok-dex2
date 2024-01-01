@@ -15,8 +15,10 @@
 
         </Grid>
         <Grid Grid.Row="1" Name="Grid_Affichage">
-            <TextBox Text="Entrer le pockémon recherhcer"  Grid.Column="0" Name="recherche" Height="30" Margin="322,187,296,217" Background="Red" />
-            <Button Grid.Column="0" Grid.Row="1" Height="40" Width="120" Name="BTN_Rechercher" Click="BTN_Rechercher_Click" Margin="340,237,340,157"/>
+            <Image Source="/Images/Pokédex fermé.png" />
+            <TextBox Text="Entrer le pockémon rechercher"  Grid.Column="0" Name="recherche" Height="30"  Width="180" Margin="322,187,296,217" Background="Red" />
+            <Button Grid.Column="0" Grid.Row="1" Height="40" Width="120" Name="BTN_Rechercher" Content="Rechercher" Click="BTN_Rechercher_Click" Margin="340,237,340,157"/>
         </Grid>
     </Grid>
 </Window>
+
