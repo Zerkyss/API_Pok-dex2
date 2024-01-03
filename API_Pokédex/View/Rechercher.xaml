@@ -7,6 +7,8 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" Background="Black">
 
+
+
     <!--Infos général du pokémon + Titre-->
 
     <Grid>
@@ -14,6 +16,14 @@
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="{x:Type TextBlock}">
+                <Setter Property="Margin" Value="10"/>
+                <Setter Property="Background" Value="Black"/>
+            </Style>
+        </Grid.Resources>
+
         <Image Source="/Images/Pokédex Ouvert + Titre.png" Grid.RowSpan="2" />
 
         <!--Titre-->
@@ -28,22 +38,8 @@
                 <RowDefinition Height="3*"/>
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
-
-            <!--Grid Recherche d'un nouveau pokémon  -->
-            <Grid Grid.Row="0">
-
-            </Grid>
-
-            <!--Grid Type du pokémon  -->
-            <Grid Grid.Row="1">
-
-            </Grid>
-
-            <!--Grid Photo du pokémon  -->
-            <Grid Grid.Row="2">
-
-            </Grid>
         </Grid>
+        
         <!--Info géneéral du pokémon-->
         <Grid Grid.Row="1" Name="Grid_Info_Général_Pokémon" >
             <Grid.ColumnDefinitions>
@@ -72,14 +68,14 @@
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
                     <!--Nom-->
-                    <Grid Grid.Row="0" Name="Nom_Pokémon">
-
+                    <Grid Grid.Row="0" Grid.Column="0" Name="Nom_Pokémon">
+                        <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                     </Grid>
 
 
                     <!--PV du pokémon-->
-                    <Grid Grid.Row="1" Name="Pv_Pokémon">
-
+                    <Grid Grid.Row="1" Grid.Column="1" Name="Pv_Pokémon">
+                        <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                     </Grid>
                 </Grid>
 
@@ -89,57 +85,71 @@
                         <ColumnDefinition Width="2.5*"/>
                         <ColumnDefinition Width="1*"/>
                     </Grid.ColumnDefinitions>
-                    <!---->
-                    <Grid Grid.Row="0" Name="Nom_évolution">
 
+                    <!--Nom évolution-->
+                    <Grid Grid.Row="0" Grid.Column="0" Name="Nom_évolution">
+                        <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                     </Grid>
 
-                    <!---->
-                    <Grid Grid.Row="1" Name="Pv_évolution">
-
-
-                    </Grid>
-
-                    <!---->
-                    <Grid Grid.Row="1" Name="Nom_de_l_évolution_pv_Type">
-
+                    <!--Pv évolution-->
+                    <Grid Grid.Row="1" Grid.Column="1" Name="Pv_évolution">
+                        <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                     </Grid>
 
                 </Grid>
 
                 <!--Info sur le pokémon-->
                 <Grid Grid.Row="2" Name="Infos_du_pokémon">
-
+                    <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                 </Grid>
 
                 <!--Point d'attaque-->
                 <Grid Grid.Row="3" Name="Pa">
-
+                    <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                 </Grid>
 
                 <!--Point de défense-->
                 <Grid Grid.Row="4" Name="défense">
-
+                    <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                 </Grid>
 
                 <!--Point de vitesse-->
                 <Grid Grid.Row="5" Name="vitesse">
-
+                    <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                 </Grid>
 
                 <!--Sa taille-->
                 <Grid Grid.Row="6" Name="taille">
-
+                    <TextBlock Text="" FontSize="20" TextAlignment="Center"  />
                 </Grid>
 
                 <!--Son poid-->
                 <Grid Grid.Row="7" Name="Poid">
-
+                    <TextBlock FontSize="20" TextAlignment="Center"/>
                 </Grid>
 
                 <!--Id + ses resistancce + ses faiblesse-->
                 <Grid Grid.Row="8" Name="ID_resistance_faiblesse">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition Width="21*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--Resistance-->
+                    <Grid Grid.Column="0">
+                        <TextBlock  Text="" FontSize="20" TextAlignment="Center"/>
+                    </Grid>
 
+                    <!--Faiblesse-->
+                    <Grid Grid.Column="1">
+                        <TextBlock  Text="" FontSize="20" TextAlignment="Center"/>
+                    </Grid>
+
+                    <!--ID Pokémon-->
+                    <Grid Grid.Column="2">
+                        <TextBlock  Text="" FontSize="20" TextAlignment="Center"/>
+                    </Grid>
                 </Grid>
 
             </Grid>
@@ -154,7 +164,7 @@
 
                 <!--Chercher un autre pokémon-->
                 <Grid Grid.Row="0" Name="Chercher" >
-
+                    <TextBox Text="Rechercher un nouveau pokémon" FontSize="24" TextAlignment="Center" Background="{x:Null}" FontFamily="Bahnschrift Light"  />
                 </Grid>
 
                 <!--Le Types de Pokémon-->
@@ -176,106 +186,252 @@
 
 
                     <Grid Grid.Row="0" Grid.Column="0" Name="Acier">
-
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Acier" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
                     </Grid>
 
 
                     <Grid Grid.Row="1" Grid.Column="0" Name="Dragon">
+                        <CheckBox FontSize="6" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Dragon" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="2" Grid.Column="0" Name="Éléctrique">
+                        <CheckBox FontSize="5.5" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Électrique" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="3" Grid.Column="0" Name="Feu">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Feu" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="0" Grid.Column="1" Name="Insecte">
+                        <CheckBox FontSize="6" HorizontalAlignment="Center" VerticalAlignment="Center"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Insecte" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="1" Grid.Column="1" Name="Plante">
+                        <CheckBox FontSize="6.5" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Plante" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="2" Grid.Column="1" Name="Psy">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Psy" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="3" Grid.Column="1" Name="Sol">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Sol" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="0" Grid.Column="2" Name="Ténèbres">
+                        <CheckBox FontSize="6" HorizontalAlignment="Center" VerticalAlignment="Center"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Ténèbres" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="1" Grid.Column="2" Name="Combat">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Combat" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="2" Grid.Column="2" Name="Eau">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Eau" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="3" Grid.Column="2" Name="Fée">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Fée" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="0" Grid.Column="3" Name="Glace">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Glace" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="1" Grid.Column="3" Name="Normal">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Normal" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="2" Grid.Column="3" Name="Poison">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Poison" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="3" Grid.Column="3" Name="Roche">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Roche" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="0" Grid.Column="4" Name="Spectre">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Spectre" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="1" Grid.Column="4" Name="Vol">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Vol" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="2" Grid.Column="4" Name="Inconnu">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Inconnu" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="3" Grid.Column="4" Name="Obscur">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Obscur" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 
 
                     <Grid Grid.Row="0" Grid.Column="5" Name="Bird">
+                        <CheckBox FontSize="7" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Bird" RenderTransformOrigin="0.5,0.5"  >
+                            <CheckBox.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1.5" ScaleY="1.5"/>
+                                </TransformGroup>
+                            </CheckBox.RenderTransform>
+                        </CheckBox>
 
                     </Grid>
 

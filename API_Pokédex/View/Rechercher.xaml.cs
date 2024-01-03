@@ -24,5 +24,6 @@ namespace API_Pokédex.View
         {
             InitializeComponent();
         }
+
     }
 }
